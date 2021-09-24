@@ -19,7 +19,7 @@ class ImageCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('File')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('url')->setBasePath('/uploads/images/')->onlyOnIndex(),
 
 

@@ -29,13 +29,13 @@ class Image
     private $url;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="images", fileNameProperty="url")
      * @var File
      */
     private $imageFile;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Image::class, inversedBy="images")
+     * @ORM\ManyToOne(targetEntity=Images::class, inversedBy="images")
      */
     private $project;
 
@@ -66,14 +66,14 @@ class Image
         return $this;
     }
 
-    public function setImageFile(File $File = null)
+    public function setImageFile(File $file = null)
     {
-        $this->imageFile = $File;
+        $this->imageFile = $file;
 
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
         // otherwise the event listeners won't be called and the file is lost
-        if ($File) {
+        if ($file) {
             // if 'updatedAt' is not defined in your entity, use another property
             $this->updatedAt = new \DateTime('now');
         }
