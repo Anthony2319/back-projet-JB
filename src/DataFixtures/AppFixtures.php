@@ -62,10 +62,6 @@ class AppFixtures extends Fixture implements FixtureGroupInterface
             $project->setDate($this->faker->dateTime($max = 'now'));
             $project->setState($this->faker->boolean());
             //$project->setCategory ($categorysParam [$categoryIndex]);
-            if (!empty($categorysParam)){
-                $category = array_shift($categorysParam);
-                $project->setCategory($category);
-            }
 
         $manager->persist($project);
         $projects[] = $project;
@@ -103,7 +99,7 @@ class AppFixtures extends Fixture implements FixtureGroupInterface
         for($i = 0; $i < $count; $i++){
             $images=[];
             $image = new Image();
-            $image->setUrl($this->faker->url());
+            $image->setFile($this->faker->url());
 
             $manager->persist($image);
             $images[] = $image;

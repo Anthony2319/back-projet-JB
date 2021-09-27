@@ -26,10 +26,10 @@ class Image
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $url;
+    private $file;
 
     /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="url")
+     * @Vich\UploadableField(mapping="images", fileNameProperty="file")
      * @var File
      */
     private $imageFile;
@@ -54,14 +54,14 @@ class Image
         return $this->id;
     }
 
-    public function getUrl(): ?string
+    public function getFile(): ?string
     {
-        return $this->url;
+        return $this->file;
     }
 
-    public function setUrl(?string $url): self
+    public function setFile(?string $file): self
     {
-        $this->url = $url;
+        $this->file = $file;
 
         return $this;
     }

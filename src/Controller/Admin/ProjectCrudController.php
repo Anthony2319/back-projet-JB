@@ -2,8 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Image;
-use App\Entity\Client;
+
 use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -30,9 +29,10 @@ class ProjectCrudController extends AbstractCrudController
             TextField::new('subtitle','Sous-titre'),
             UrlField::new('banner','Image entête')->onlyOnForms(),
             TextEditorField::new('description','Description')->onlyOnForms(),
-            AssociationField::new('Client','name', 'commenditaire'),
+            TextField::new('Client','name', 'commenditaire'),
             DateTimeField::new('date','Date de création')->onlyOnForms(),
             BooleanField::new('state', 'Etat')->onlyOnForms(),
+
 
         ];
     }
