@@ -35,7 +35,7 @@ class Image
     private $imageFile;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Images::class, inversedBy="images")
+     * @ORM\ManyToOne(targetEntity=Image::class, inversedBy="images")
      */
     private $project;
 
